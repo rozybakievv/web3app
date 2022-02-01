@@ -6,7 +6,7 @@ import Footer from "./components/Footer.jsx"
 const App = () => {
     return (
         <div className="min-h-screen">
-            <div className="bg-gradient-to-t from-gray-700 via-gray-900 to-black">
+            <div>
                 <Navbar></Navbar>
                 <Home></Home>
             </div>
