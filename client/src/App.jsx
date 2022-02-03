@@ -6,10 +6,8 @@ import Footer from "./components/Footer.jsx"
 const App = () => {
     return (
         <div className="min-h-screen">
-            <div>
-                <Navbar></Navbar>
-                <Home></Home>
-            </div>
+            <Navbar></Navbar>
+            <Home></Home>
             <Modal></Modal>
             <Footer></Footer>
         </div>

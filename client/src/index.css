@@ -11,8 +11,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: black;
-    background-image: url('../public/background.svg');
+    color: white;
+    background-color: black;
+    /* background-image: url('../public/cgi-background.jpg'); */
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-size: cover;
+}
+
+.text-shadow {
 }
