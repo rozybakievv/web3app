@@ -11,12 +11,10 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: white;
-    background-color: black;
-    /* background-image: url('../public/cgi-background.jpg'); */
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: black;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
-.text-shadow {
+.modal {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
