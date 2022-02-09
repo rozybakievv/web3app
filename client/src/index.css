@@ -11,10 +11,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: black;
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-}
-
-.modal {
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    color: white;
+    background-color: rgb(31 41 55 / 1);
 }
