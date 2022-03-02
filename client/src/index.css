@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;700&display=swap');
 
 *html {
     padding: 0;
@@ -10,7 +10,30 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    background-color: rgb(31 41 55 / 1);
+    font-family: 'Inconsolata', monospace;
+    color: #404040;
+    background-image: url('../public/background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.title {
+    filter: drop-shadow(0px 4px 1px rgb(177, 177, 177));
+    letter-spacing: 1rem;
+}
+
+.graycolor {
+    background: #e0e0e0;
+}
+
+.bg-card {
+    background-image:#ff0000;background-image:  
+    radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
+    radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),  
+    radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),  
+    radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),  
+    radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),  
+    radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),  
+    radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
 }
