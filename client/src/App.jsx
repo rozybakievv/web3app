@@ -21,6 +21,14 @@ const App = () => {
     const [formAmount, setFormAmount] = useState('');
     const formAmountContext = { formAmount, setFormAmount };
 
+    const [success, setSuccess] = useState('');
+    const successContext = { success, setSuccess };
+
+    const [transactCount, setTransactCount] = useState('');
+    const transactCountContext = { transactCount, setTransactCount };
+
+    const [transactionList, setTransactionList] = useState([]);
+
     const { ethereum } = window;
 
     const getSendContract = () => {
@@ -52,14 +60,50 @@ const App = () => {
             console.log(`Sending ... - ${transactionToBlockchain.hash}`);
             await transactionToBlockchain.wait();
             console.log(`Sent ! - ${transactionToBlockchain.hash}`);
+            setSuccess('Success');
+            setTimeout(() => {  setSuccess('') }, 10000);
+
+            /* const count = await contract.getTransactionCount();
+            setTransactCount(parseInt(count)) */
         } catch (error) {   
             console.log(error);
         }
     }
 
+    const checkTransactions = async () => {
+        try {
+            const contract = getSendContract();
+            const count = await contract.getTransactionCount();
+            setTransactCount(parseInt(count));
+
+            window.localStorage.setItem("transactionCount", transactCount);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getAllTransactions = async () => {
+        try {
+            if(!ethereum) return alert('Please install Metamask');
+
+            const contract = getSendContract();
+            const allTransacts = await contract.getAllTransactions();
+            const allTransactionsArray = allTransacts.map((transaction) => ({
+                addressTo: transaction.receiver,
+                addressFrom: transaction.sender,
+                timestamp: new Date(Number(transaction.timestamp) * 1000).toLocaleString(),
+                amount: parseInt(transaction.amount._hex) / (10 ** 18)
+            }))
+
+            setTransactionList(allTransactionsArray);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
     return (
         <div className="min-h-screen">
-            <TransactionContext.Provider value={{ formAddressContext, formAmountContext, sendTransaction }}>
+            <TransactionContext.Provider value={{ formAddressContext, formAmountContext, sendTransaction, successContext, transactCountContext, getAllTransactions, checkTransactions, transactionList }}>
                 <addressContext.Provider value={ methodContextAddress }>
                     <BrowserRouter>
                         <Navbar></Navbar>
