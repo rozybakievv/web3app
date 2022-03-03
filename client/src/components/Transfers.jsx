@@ -8,6 +8,7 @@ const Receive = () => {
     useEffect(() => {
         checkTransactions();
         getAllTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     return (
