@@ -62,9 +62,6 @@ const App = () => {
             console.log(`Sent ! - ${transactionToBlockchain.hash}`);
             setSuccess('Success');
             setTimeout(() => {  setSuccess('') }, 10000);
-
-            /* const count = await contract.getTransactionCount();
-            setTransactCount(parseInt(count)) */
         } catch (error) {   
             console.log(error);
         }

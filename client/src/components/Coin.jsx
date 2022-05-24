@@ -6,7 +6,7 @@ const Coin = (props) => {
                 <img src={props.image} alt={props.image} className="h-24" />
             </div>
             <div className="w-full px-6 py-4">
-                {/* Ttile */}
+                {/* Title */}
                 <h1 className="text-xl font-bold text-center">{props.name} ({props.symbol})</h1>
 
                 <div className="w-full m-2 border border-neutral-400"></div>
@@ -20,7 +20,10 @@ const Coin = (props) => {
                         </tr>
                         <tr>
                             <td>24%:</td>
-                            <td className="text-right">{props.price24}%</td>
+                            {
+                                props.price24 >= 0 ? <td className="text-right text-green-500">+{props.price24}%</td>
+                                : <td className="text-right text-red-500">{props.price24}%</td>
+                            }
                         </tr>
                         <tr>
                             <td>Market cap:</td>
