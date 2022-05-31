@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { TransactionContext } from "../App";
+import Footer from "./Footer";
 
 const Send = () => {
     const { formAddressContext, formAmountContext, sendTransaction, successContext } = useContext(TransactionContext);
@@ -43,7 +44,7 @@ const Send = () => {
                 </div>
             </div>
 
-            <form autoComplete="off" className="w-96 sm:px-4">
+            <form autoComplete="off" className="w-96 px-4 md:p-0">
                 <div className="mb-6">
                     <label htmlFor="address" className="block mb-2 text-md text-neutral-700">Address</label>
                     <input type="text" id="address" placeholder="0x" required className="block w-full p-2 border-2 outline-none graycolor rounded-xl border-neutral-700" />
@@ -56,7 +57,7 @@ const Send = () => {
                         </div>
                         <div>
                             <label htmlFor="address" className="block mb-2 text-md text-neutral-700">Amount (USD)</label>
-                            <input readonly disabled value={usdValue} id="amountEth" placeholder="0$" required className="block w-full p-2 border-2 outline-none graycolor rounded-xl border-neutral-700" />
+                            <input readOnly disabled value={usdValue} id="amountEth" placeholder="0$" required className="block w-full p-2 border-2 outline-none graycolor rounded-xl border-neutral-700" />
                         </div>
                     </div>
                 </div>
@@ -71,6 +72,7 @@ const Send = () => {
                     </h1>
                 </div>
             }
+            <Footer></Footer>
         </div>
     )
 }

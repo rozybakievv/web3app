@@ -1,10 +1,10 @@
 const TransferRows = (props) => {
     return (
-        <tr className="transition duration-200 hover:bg-neutral-300">
-            <td className="px-6 py-4 whitespace-nowrap">{props.addressFrom}</td>
-            <td className="px-6 py-4 whitespace-nowrap">{props.addressTo}</td>
-            <td className="px-6 py-4 whitespace-nowrap">{props.timestamp}</td>
-            <td className="px-6 py-4 whitespace-nowrap">{props.amount}</td>
+        <tr className="transition duration-200 graycolor hover:bg-neutral-300">
+            <td className="px-6 py-4">{props.addressFrom}</td>
+            <td className="px-6 py-4">{props.addressTo}</td>
+            <td className="px-6 py-4">{props.timestamp}</td>
+            <td className="px-6 py-4">{props.amount}</td>
         </tr>
     )
 }

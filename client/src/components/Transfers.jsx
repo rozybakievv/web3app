@@ -35,7 +35,7 @@ const Receive = () => {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200">
+                            <tbody className="divide-y divide-gray-300">
                                 {
                                     transactionList.reverse().map((transaction, i) => (
                                         <TransferRows key={i} addressFrom={transaction.addressFrom} addressTo={transaction.addressTo} timestamp={transaction.timestamp} amount={transaction.amount}/>
