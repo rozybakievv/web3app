@@ -7,7 +7,7 @@ Readme files in each folder on how to use the web application
 - tailwind css
 - ethers js
 
-### Smart-contract technologies
+## Smart-contract technologies
 - solidity
 - hardhat
 - ethers js
