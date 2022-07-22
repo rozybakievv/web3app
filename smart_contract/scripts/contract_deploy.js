@@ -1,3 +1,5 @@
+// file that executes when the contract Send_Ethereum has to be deployed on the Ropsten network
+
 const hre = require("hardhat");
 
 const main = async() => {

@@ -7,6 +7,7 @@ const Send = () => {
     const [usd, setUsd] = useState(0);
     const [usdValue, setUsdValue] = useState("");
 
+    // function that executes the transaction
     const sendT = async () => {
         const address = document.getElementById("address");
         const amount = document.getElementById("amountEth");
@@ -17,6 +18,7 @@ const Send = () => {
         await sendTransaction();
     }
 
+    // fetches the current price of ethereum from the api
     useEffect(() => {
         const fetchPrice = async () => {
             const response = await fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD');
@@ -28,6 +30,7 @@ const Send = () => {
         .catch(console.error);
     }, [])
 
+    // handles the change of ethereum amount input and converts it to usd
     const ethChange = (e) => {
         e.preventDefault();
         const ethAmount = document.getElementById("amountEth");
@@ -47,17 +50,17 @@ const Send = () => {
             <form autoComplete="off" className="w-96 px-4 md:p-0">
                 <div className="mb-6">
                     <label htmlFor="address" className="block mb-2 text-md text-neutral-700">Address</label>
-                    <input type="text" id="address" placeholder="0x" required className="block w-full p-2 border-2 outline-none graycolor rounded-xl border-neutral-700" />
+                    <input type="text" id="address" placeholder="0x" required className="block w-full p-2 border-2 outline-none rounded-xl border-neutral-700" />
                 </div>
                 <div className="mb-6">
                     <div className="grid grid-cols-2 gap-2">
                         <div>
                             <label htmlFor="address" className="block mb-2 text-md text-neutral-700">Amount (ETH)</label>
-                            <input onChange={ethChange} type="number" min="0" id="amountEth" placeholder="0 eth" required className="block w-full p-2 border-2 outline-none graycolor rounded-xl border-neutral-700" />
+                            <input onChange={ethChange} type="number" min="0" id="amountEth" placeholder="0 eth" required className="block w-full p-2 border-2 outline-none rounded-xl border-neutral-700" />
                         </div>
                         <div>
                             <label htmlFor="address" className="block mb-2 text-md text-neutral-700">Amount (USD)</label>
-                            <input readOnly disabled value={usdValue} id="amountEth" placeholder="0$" required className="block w-full p-2 border-2 outline-none graycolor rounded-xl border-neutral-700" />
+                            <input readOnly disabled value={usdValue} id="amountEth" placeholder="0$" required className="block w-full p-2 border-2 outline-none rounded-xl border-neutral-700" />
                         </div>
                     </div>
                 </div>

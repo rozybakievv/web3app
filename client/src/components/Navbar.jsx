@@ -7,6 +7,7 @@ const Navbar = () => {
     const [connected, setConnected] = useState(null);
     const walletAddress = useContext(addressContext);
 
+    // connection handler on connect button click
     const connexionHandler = () => {
         if(window.ethereum) {
             window.ethereum.request({method : 'eth_requestAccounts'})
@@ -21,6 +22,7 @@ const Navbar = () => {
         }
     }
 
+    // handles if there is a new account connected
     const accountChangeHandler = (newAccount) => {
         walletAddress.setAddress(newAccount);
     }

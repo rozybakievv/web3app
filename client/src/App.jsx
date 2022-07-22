@@ -8,7 +8,9 @@ import Transfers from "./components/Transfers.jsx"
 import { ethers } from 'ethers';
 import { contractAbi, contractAddress } from './constants/consts.js';
 
+// context variable used to store the users wallet address
 export const addressContext = React.createContext();
+// context variable used to store the transactions from the contract
 export const TransactionContext = React.createContext();
 
 const App = () => {
@@ -31,6 +33,7 @@ const App = () => {
 
     const { ethereum } = window;
 
+    // function that retrieves the contract deployed on the Ropsten Test Network
     const getSendContract = () => {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
@@ -39,11 +42,14 @@ const App = () => {
         return contract;
     }
 
+    // function that executes the transaction made by the user
     const sendTransaction = async() => {
         try {
+            // if a metamask wallet is not detected -> alert
             if(!ethereum) return alert('Please install Metamask');
             
             const contract = getSendContract();
+            // converting the amount from the form into gwei using the utils from the ethers package
             const amountToGwei = ethers.utils.parseEther(formAmount);
 
             await ethereum.request({
@@ -56,6 +62,7 @@ const App = () => {
                 }]
             });
 
+            // sending the transaction then displaying the result of the transaction
             const transactionToBlockchain = await contract.sendEth(String(formAddress ), amountToGwei);
             console.log(`Sending ... - ${transactionToBlockchain.hash}`);
             await transactionToBlockchain.wait();
@@ -67,6 +74,7 @@ const App = () => {
         }
     }
 
+    // function that gets the transaction from the contract and storing it in the context variable
     const checkTransactions = async () => {
         try {
             const contract = getSendContract();
@@ -79,6 +87,7 @@ const App = () => {
         }
     }
 
+    // function that gets all the transactions made with the contract and storing it in the context variable
     const getAllTransactions = async () => {
         try {
             if(!ethereum) return alert('Please install Metamask');

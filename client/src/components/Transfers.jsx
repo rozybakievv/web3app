@@ -5,6 +5,7 @@ import TransferRows from "./TransferRows";
 const Receive = () => {
     const { transactCountContext, getAllTransactions, checkTransactions, transactionList } = useContext(TransactionContext);
 
+    // gets the transactions and the transaction count from the contract
     useEffect(() => {
         checkTransactions();
         getAllTransactions();

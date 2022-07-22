@@ -11,15 +11,9 @@
 
 body {
     font-family: 'Inconsolata', monospace;
+    /* color: #404040; */
     color: #404040;
-    background-image: url('../public/background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.graycolor {
-    background: #e0e0e0;
+    background-color: white;
 }
 
 .bg-card {
@@ -35,7 +29,7 @@ body {
 
 .title {
     font-weight: 700;
-    text-shadow: 2px 2px 0px #555555,
-    4px 4px 0px #949494,
-    6px 6px 0px #bebebe;
+    background-image: linear-gradient(45deg, #be91e0, #98a7ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

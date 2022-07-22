@@ -1,6 +1,6 @@
 const Coin = (props) => {
     return (
-        <div className="max-w-xs overflow-hidden transition duration-200 ease-in-out border-2 rounded-lg shadow-lg max-h-sm border-neutral-700 graycolor hover:translate-y-1">
+        <div className="max-w-xs overflow-hidden transition duration-200 ease-in-out border-2 rounded-lg shadow-lg max-h-sm border-neutral-700 hover:translate-y-1">
             {/* Image of coin */}
             <div className="flex justify-center p-4">
                 <img src={props.image} alt={props.image} className="h-24" />
