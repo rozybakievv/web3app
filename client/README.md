@@ -7,12 +7,12 @@ by Guyass Rozybakiev
 - Cd in the folder `client` using the terminal
 - Execute the command `npm start` in the terminal
 
-### How to start using the web application
+## How to start using the web application
 
 - Change the network on your Metamask wallet to Ropsten Test Network
 - Connect your Metamask wallet using the connect button
 
-#### How to send Ethereum to another wallet
+## How to send Ethereum to another wallet
 
 - Create a second account on your Metamask wallet that will act as a receiver
 - Get Ethereum from a Ropsten Test Network faucet online
